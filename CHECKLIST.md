@@ -1,98 +1,145 @@
 # Zappli Landing Page — Build Checklist
 
-Track progress against `PLAN.md`. Check items off as they are completed.
+Tracks progress against `PLAN.md` (v2). Local-first: Stage A builds and is reviewed
+on `localhost`; Stage B publishes only after local approval.
 
-## Phase 0 — Project setup
+---
 
-- [ ] Scaffold Next.js (App Router) + TypeScript + Tailwind + ESLint
-- [ ] Install deps: `lucide-react`, `motion`, `@supabase/supabase-js`
-- [ ] Add brand color tokens to the Tailwind `@theme`
-- [ ] Add primary + accent gradient utilities
-- [ ] Load Inter via `next/font`
-- [ ] Build base layout, page metadata, and a gradient "Z" favicon
-- [x] Create `.env.example` with placeholder variable names
-- [x] Confirm `.gitignore` excludes all `.env*` files (except the example)
+## STAGE A — build & review locally
 
-## Phase 1 — Design system
+### Phase 0 · Scaffold
 
-- [ ] `GradientText` component
-- [ ] `GradientButton` component (hover glow / gradient shift)
-- [ ] `Section` + `Container` layout primitives
-- [ ] `Card` + `Pill` primitives (correct radii + soft shadows)
-- [ ] Background radial-glow effect
-- [ ] Subtle grain / noise overlay
-- [ ] `ScrollReveal` animation wrapper
-- [ ] `prefers-reduced-motion` respected throughout
+- [ ] `create-next-app` — TypeScript, App Router, Tailwind, `src/`, ESLint
+- [ ] Install `motion` and `lucide-react`
+- [ ] Add `.env.example` (placeholder variable names only)
+- [ ] Update `.gitignore` — raw `assets/`, `waitlist.local.json`, `.next/`
+- [ ] Dev server runs at `localhost:3000`
 
-## Phase 2 — Layout shell
+### Phase 1 · Design system
 
-- [ ] Sticky nav with the gradient wordmark
-- [ ] Nav condenses / blurs on scroll
-- [ ] Footer (wordmark, tagline, copyright, contact email, privacy link)
-- [ ] Page scaffold with all 9 section placeholders
+- [ ] Run the Hallmark pre-flight scan; record findings
+- [ ] Write `design.md` — the locked Zappli atmospheric system
+- [ ] Write `tokens.css` — all brand colours OKLCH-encoded
+- [ ] Wire Tailwind `@theme` from the tokens
+- [ ] Load Inter + Inter Tight via `next/font`
+- [ ] Base layout, page metadata, gradient "Z" favicon
+- [ ] Create `.hallmark/` project memory (`log.json`, `preflight.json`)
 
-## Phase 3 — Sections
+### Phase 2 · Asset pipeline
+
+- [ ] Install ffmpeg (winget)
+- [ ] Audit, label, and dedupe the screen-recording clips
+- [ ] Convert `.mov` / `.gif` → `.mp4` (H.264) + `.webm` (VP9/AV1)
+- [ ] Optimize each clip (muted, looping, well under ~2MB)
+- [ ] Generate a poster (first-frame) image per clip
+- [ ] Rename assets semantically
+- [ ] Recreate the gradient wordmark + bolt mark as SVG
+- [ ] Place finished assets in `public/`; confirm raw `assets/` is gitignored
+
+### Phase 3 · Layout shell
+
+- [ ] N5 floating-pill nav with the gradient wordmark
+- [ ] Minimal statement-style footer
+- [ ] Page scaffold with all 10 section placeholders
+- [ ] Background radial gradient bloom + grain overlay
+- [ ] `ScrollReveal` animation wrapper (respects reduced-motion)
+- [ ] Primitives: `GradientText`, `GradientButton`, `Section`, `Container`
+
+### Phase 4 · Sections
 
 - [ ] S1 Hero — wordmark, gradient headline, subheadline
-- [ ] S1 Hero — waitlist form (input + gradient button)
-- [ ] S1 Hero — iPhone mockup with an animated swipe deck
+- [ ] S1 Hero — looping app video centerpiece + HP3 cursor-spotlight
 - [ ] S2 The Problem — stat header + supporting paragraph
-- [ ] S3 How It Works — 3 step cards with icons
-- [ ] S4 Features — 4-card bento grid
-- [ ] S5 The Numbers — 4 metric tiles with count-up animation
-- [ ] S6 Trust line block
-- [ ] S7 FAQ — 5-item animated accordion
-- [ ] S8 Final CTA — headline + waitlist form
-- [ ] S9 Footer finalized
-- [ ] All copy matches the brief; no overstated claims
+- [ ] S3 How It Works — 3 steps, scroll-synced app visuals
+- [ ] S5 Features — 4-feature grid, irregular tile sizes
+- [ ] S6 The Numbers — 4 metric tiles
+- [ ] S7 Trust line block
+- [ ] S8 FAQ — 5-item accordion
+- [ ] S9 Final CTA — headline + waitlist form
+- [ ] S10 Footer finalized
+- [ ] All copy matches the brief; honest-copy guardrails respected
 
-## Phase 4 — Waitlist & email
+### Phase 5 · Interactive swipe deck
+
+- [ ] S4 draggable job-card stack (motion drag)
+- [ ] Swipe-right → tailored-resume animation
+- [ ] Keyboard accessible
+- [ ] Reduced-motion fallback (tap / static)
+
+### Phase 6 · Waitlist form (local mock)
+
+- [ ] `<WaitlistForm>` — all 8 states
+- [ ] `/api/waitlist` route handler — local mock storage
+- [ ] Email-format validation
+- [ ] Duplicate-email handling
+- [ ] Honeypot spam field
+- [ ] Success / error states verified
+
+### Phase 7 · Motion + polish + responsive
+
+- [ ] Scroll-reveal on every section
+- [ ] Cursor-spotlight glow
+- [ ] Count-up animation on the metric tiles
+- [ ] Responsive at 320 / 375 / 414 / 768px — no horizontal scroll
+- [ ] Performance — video posters, lazy loading, `next/image`
+- [ ] Accessibility — focus rings, `prefers-reduced-motion`, aria on form + accordion
+
+### Phase 8 · Hallmark slop test
+
+- [ ] Run all 69 slop-test gates — fix every failure
+- [ ] Six-axis pre-emit self-critique (revise anything scoring < 3)
+- [ ] Stamp the CSS (`/* Hallmark · macrostructure: Workbench · ... */`)
+- [ ] Update `.hallmark/log.json`
+
+> ### ☐ LOCAL REVIEW GATE — open `localhost:3000`, iterate until approved
+
+---
+
+## STAGE B — publish (only after local approval)
+
+### Phase 9 · Real email
 
 - [ ] Create the Supabase project
-- [ ] Create the `waitlist` table
-- [ ] Enable RLS + the anon insert-only policy
-- [ ] `<WaitlistForm>` — email format validation
-- [ ] `<WaitlistForm>` — loading state
-- [ ] `<WaitlistForm>` — success state
-- [ ] `<WaitlistForm>` — duplicate-email handling
-- [ ] `<WaitlistForm>` — network / error state with retry
-- [ ] Honeypot spam field
-- [ ] Edge Function fires on insert
-- [ ] Confirmation email sends via Resend
-- [ ] `RESEND_API_KEY` stored as a Supabase secret (not in the repo)
-- [ ] (Optional) owner notification email on each signup
+- [ ] Create the `waitlist` table + RLS policy
+- [ ] Swap `/api/waitlist` from local mock to Supabase
+- [ ] Add the Resend confirmation email
+- [ ] (Optional) owner-notification email on each signup
+- [ ] Set env vars locally (`.env.local`, gitignored)
 - [ ] End-to-end test: submit → row inserted → confirmation email received
 - [ ] End-to-end test: duplicate and invalid emails handled gracefully
 
-## Phase 5 — Polish
+### Phase 10 · Deploy
 
-- [ ] Scroll-reveal on every section
-- [ ] Button + card micro-interactions
-- [ ] Mobile responsive pass
-- [ ] Desktop responsive pass
-- [ ] Image optimization (`next/image`)
-- [ ] LCP under 1.5s
-- [ ] Lighthouse ≥ 95 (performance + accessibility)
-- [ ] SEO meta tags + OG image
-- [ ] Color contrast + visible focus states
-- [ ] aria attributes on the form and the accordion
-
-## Phase 6 — Deploy
-
+- [ ] Push to GitHub
 - [ ] Import the repo to Vercel
 - [ ] Set env vars in the Vercel dashboard
 - [ ] Attach the custom domain
-- [ ] Verify the production build + the waitlist works in production
+- [ ] Verify the production build
 
-## Phase 7 — QA
+### Phase 11 · Production QA
 
-- [ ] Loads in under ~1.5s
-- [ ] Sharp on mobile and desktop
-- [ ] Zappli is understandable within ~5 seconds
-- [ ] Waitlist works end-to-end, including the confirmation email
+- [ ] Re-run the slop test on production
+- [ ] Loads in under ~1.5s; sharp on mobile and desktop
+- [ ] Zappli understandable within ~5 seconds
+- [ ] Waitlist works in production, including the confirmation email
+- [ ] Lighthouse ≥ 95 (performance + accessibility)
 - [ ] Brand matches the app
+
+---
+
+## Hallmark compliance gate
+
+- [ ] Genre file loaded (atmospheric)
+- [ ] Macrostructure picked and stamped (Workbench)
+- [ ] `design.md` system in place; tokens locked (no inline hex)
+- [ ] No re-drawn device chrome — real video / screenshots only
+- [ ] Honest copy — no invented metrics
+- [ ] ≤ ~3 motion primitives; `transform`/`opacity` only; 3 named easings
+- [ ] `prefers-reduced-motion` supported throughout
+- [ ] Every interactive element ships all 8 states
+- [ ] 69-gate slop test passed
 
 ## Security gate — before every commit
 
-- [ ] `git status` reviewed — no `.env.local` or secrets staged
+- [ ] `git status` reviewed — no `.env.local`, secrets, or raw `assets/` staged
 - [ ] No API keys or tokens present in committed code

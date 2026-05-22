@@ -57,3 +57,9 @@ ehthumbs.db
 
 # Private planning notes — kept local, never published
 SETUP_AND_COSTS.md
+
+# Raw source assets — heavy originals; optimized versions live in public/
+assets/
+
+# Local waitlist mock data (Stage A, pre-publish)
+waitlist.local.json

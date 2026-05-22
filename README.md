@@ -29,7 +29,7 @@ This site has one job: **collect waitlist emails from job seekers before launch.
 | Icons              | lucide-react                               |
 | Animation          | motion (Framer Motion)                     |
 | Waitlist storage   | Supabase                                   |
-| Confirmation email | Resend, via a Supabase Edge Function       |
+| Confirmation email | Resend, via a Next.js route handler        |
 | Hosting            | Vercel                                     |
 
 ## Getting started
