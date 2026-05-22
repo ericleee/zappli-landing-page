@@ -54,3 +54,6 @@ ehthumbs.db
 
 # Claude Code local settings (machine-specific)
 .claude/settings.local.json
+
+# Private planning notes — kept local, never published
+SETUP_AND_COSTS.md

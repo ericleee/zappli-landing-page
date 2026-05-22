@@ -55,6 +55,13 @@ after each section, pause for a browser review.
 
 ## 3. Design direction — "unique and beautiful, like cluely"
 
+> **Design is driven by the [Hallmark](https://github.com/Nutlope/hallmark) skill** —
+> an anti-AI-slop design ruleset (installed globally). It enforces structural
+> variety, honest copy, locked design tokens, and a 65-gate quality check on every
+> page. Note: Hallmark forbids hand-drawn device chrome, so app visuals use real
+> screenshots (optionally inside a real device-frame image), never a CSS-built
+> iPhone frame.
+
 Borrow cluely's *quality bar and structure* — not its look, and not its tone.
 
 - A bold, confident hero — one headline, one subheadline, an immediate CTA.
