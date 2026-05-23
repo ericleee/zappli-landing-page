@@ -47,17 +47,17 @@ on `localhost`; Stage B publishes only after local approval.
 
 ### Phase 4 · Sections
 
-- [ ] S1 Hero — wordmark, gradient headline, subheadline
-- [ ] S1 Hero — looping app video centerpiece + HP3 cursor-spotlight
-- [ ] S2 The Problem — stat header + supporting paragraph
-- [ ] S3 How It Works — 3 steps, scroll-synced app visuals
-- [ ] S5 Features — 4-feature grid, irregular tile sizes
-- [ ] S6 The Numbers — 4 metric tiles
-- [ ] S7 Trust line block
-- [ ] S8 FAQ — 5-item accordion
-- [ ] S9 Final CTA — headline + waitlist form
-- [ ] S10 Footer finalized
-- [ ] All copy matches the brief; honest-copy guardrails respected
+- [x] S1 Hero — wordmark, gradient headline, subheadline
+- [~] S1 Hero — looping app video centerpiece + HP3 cursor-spotlight (cursor-spotlight done; real video lands in Phase 2)
+- [x] S2 The Problem — stat header + supporting paragraph
+- [x] S3 How It Works — 3 alternating steps with figure placeholders (real screens in Phase 2)
+- [x] S5 Features — bento grid, irregular tile sizes
+- [x] S6 The Numbers — 4 metric tiles (count-up wired in Phase 7)
+- [x] S7 Trust line block
+- [x] S8 FAQ — 5-item accordion (native `<details>`, no JS)
+- [x] S9 Final CTA — headline + waitlist form (form wired in Phase 6)
+- [x] S10 Footer finalized (Phase 3)
+- [x] All copy matches the brief; honest-copy guardrails respected (TODOs flagged on the 11-hour stat and the 3-intros figure)
 
 ### Phase 5 · Interactive swipe deck
 
