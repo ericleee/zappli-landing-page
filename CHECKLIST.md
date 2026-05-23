@@ -38,12 +38,12 @@ on `localhost`; Stage B publishes only after local approval.
 
 ### Phase 3 · Layout shell
 
-- [ ] N5 floating-pill nav with the gradient wordmark
-- [ ] Minimal statement-style footer
-- [ ] Page scaffold with all 10 section placeholders
-- [ ] Background radial gradient bloom + grain overlay
-- [ ] `ScrollReveal` animation wrapper (respects reduced-motion)
-- [ ] Primitives: `GradientText`, `GradientButton`, `Section`, `Container`
+- [x] N5 floating-pill nav with the gradient wordmark
+- [x] Ft5 statement-style footer
+- [x] Page scaffold with all 10 section placeholders
+- [x] Background radial gradient bloom + grain overlay (Phase 1)
+- [x] `ScrollReveal` animation wrapper (opacity-only, reduced-motion safe)
+- [x] Primitives: `GradientText`, `GradientButton`, `Logo`, `Section`, `Container`
 
 ### Phase 4 · Sections
 
