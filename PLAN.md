@@ -88,7 +88,9 @@ From the app brief and the logo assets:
 - **Gradients:** primary `#7C3AED → #6366F1 → #3B82F6`; accent `#0066FF → #00D4FF`.
 - **Shape:** radii — cards 16px, buttons 12px, pills/inputs 100px / 10px; soft
   shadows, never harsh.
-- **Type:** Inter family (the app uses iOS SF Pro; Inter is the web match).
+- **Type:** Geist pairing — the brief originally specified Inter, but Hallmark
+  bans Inter as a default and the atmospheric pairing canon is Geist. Geist
+  serves the brief's SF-Pro intent without that conflict. See `design.md` §3.
 
 This becomes the **locked design system** — see §5.
 
@@ -146,7 +148,7 @@ Hallmark · build target
 - Genre          · atmospheric (dark AI-tool school)
 - Macrostructure · Workbench (#05) — guided app tour
 - Theme          · custom — Zappli atmospheric
-                   (#0D1117 paper · purple→cyan gradient accent · Inter Tight display)
+                   (#0D1117 paper · purple→cyan gradient accent · Geist display)
 - Nav            · N5 Floating pill
 - Footer         · minimal statement
 - Hero           · headline + waitlist form + looping app video · HP3 cursor-spotlight
@@ -165,7 +167,7 @@ Hallmark · build target
 | ---------------- | ------------------------------------------------------------- |
 | Framework        | Next.js (App Router) + TypeScript                             |
 | Styling          | Tailwind CSS v4 (`@theme`, fed from `tokens.css`)             |
-| Fonts            | Inter + Inter Tight, via `next/font`                          |
+| Fonts            | Geist + Geist Mono, via `next/font`                           |
 | Animation        | motion (Framer Motion) — scroll reveal, swipe drag, count-up  |
 | Icons            | lucide-react                                                  |
 | Waitlist backend | Next.js Route Handler `POST /api/waitlist` (one backend)      |
@@ -191,9 +193,9 @@ the brand hex in §2.2 is the source of truth. Token groups:
   `#00D4FF`; `--gradient-primary` and `--gradient-accent`; `--glow-cyan` for the
   atmospheric bloom.
 - **Semantic** — `--color-success` `#10B981`.
-- **Type** — `--font-display` Inter Tight (headlines) · `--font-body` Inter. A real
-  two-face pairing satisfies Hallmark's pairing rule while honouring the brief's
-  Inter mandate.
+- **Type** — `--font-display` Geist Sans · `--font-body` Geist Sans · `--font-outlier`
+  Geist Mono. Hallmark bans Inter as a default; Geist is the atmospheric pairing
+  canon and matches the brief's SF-Pro intent. Locked in `design.md` §3.
 - **Scale** — 4-pt spacing (`--space-*`), a `--text-*` type scale, radii
   (`--radius-card` 16px, `--radius-button` 12px, `--radius-pill` 100px),
   `--ease-*` and `--dur-*` motion tokens.
@@ -321,7 +323,7 @@ runs only after you approve the local build.
   update `.gitignore` (raw `assets/`, `waitlist.local.json`); dev server runs.
 - **Phase 1 · Design system** — run the Hallmark pre-flight scan; write `design.md`
   (the locked Zappli atmospheric system) and `tokens.css` (OKLCH); wire Tailwind
-  `@theme` and `next/font` (Inter, Inter Tight); base layout, metadata, favicon;
+  `@theme` and `next/font` (Geist, Geist Mono); base layout, metadata, favicon;
   create `.hallmark/` project memory.
 - **Phase 2 · Asset pipeline** — install ffmpeg; audit / label / dedupe the clips;
   convert `.mov` and `.gif` → `.mp4` + `.webm`; optimize and generate posters;

@@ -1,0 +1,26 @@
+{
+  "date": "2026-05-22",
+  "framework": "Next.js 16.2.6 (App Router)",
+  "language": "TypeScript",
+  "tailwind": "v4 (@theme inline in src/app/globals.css)",
+  "font_stack": "Geist + Geist Mono (next/font/google)",
+  "palette": "OKLCH tokens in src/app/tokens.css; locked from the app brand (design.md)",
+  "motion_library": "motion 12.40.0",
+  "spacing_scale": "4-pt scale (--space-1..10 in tokens.css)",
+  "design_md": true,
+  "preserve": [
+    "Geist font stack",
+    "OKLCH palette derived from app brand",
+    "design.md locked design system"
+  ],
+  "introduce": [
+    "macrostructure: Workbench",
+    "nav N5 (floating pill)",
+    "footer Ft5 (statement)",
+    "Hallmark 69-gate slop test",
+    "atmospheric genre disciplines"
+  ],
+  "documented_exceptions": [
+    "Brand multi-stop gradient and gradient-text on hero keywords — see design.md §6 (locked-system override of color.md gate 5)."
+  ]
+}

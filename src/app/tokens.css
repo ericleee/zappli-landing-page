@@ -1,0 +1,108 @@
+/* ─────────────────────────────────────────────────────────────────────────
+ * Zappli — design tokens (locked design system)
+ *
+ * Every value is OKLCH per Hallmark color.md.  Hex equivalents are kept in
+ * comments so the values remain auditable against the app's theme.ts.
+ *
+ * Anchor hue: ~258 (cool blue-violet) — neutrals lean cool to match.
+ * Accent:     the brand purple→indigo→blue gradient, used as a single accent
+ *             with restraint (≤ 3 % of any viewport per color.md).
+ *
+ * Documented brand exceptions (see design.md §6):
+ *   – Multi-stop and gradient-text usage are deliberate brand identity,
+ *     not LLM slop. They are restricted to: the brand mark, the primary
+ *     CTA, and the hero headline's last 3-4 keywords. Nowhere else.
+ * ───────────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* Paper / surfaces — dark recipe (Hallmark color.md, L 12-18 %) */
+  --color-paper:         oklch(17.6% 0.014 258.4);   /* #0D1117 */
+  --color-surface:       oklch(22.0% 0.016 256.8);   /* #161B22 */
+  --color-card:          oklch(27.8% 0.030 256.8);   /* #1F2937 */
+  --color-card-hi:       oklch(31.5% 0.036 260.1);   /* #273244 — elevated */
+  --color-rule:          oklch(35.0% 0.020 258.0);   /* hairline border */
+
+  /* Ink — L 92-96 % per dark-mode recipe */
+  --color-ink:           oklch(96.0% 0.005 258.0);   /* tinted near-white */
+  --color-ink-secondary: oklch(71.4% 0.019 261.3);   /* #9CA3AF */
+  --color-ink-muted:     oklch(55.1% 0.023 264.4);   /* #6B7280 */
+
+  /* Brand accent — used ≤ 3 % of viewport */
+  --color-purple:        oklch(54.1% 0.247 293.0);   /* #7C3AED */
+  --color-indigo:        oklch(58.5% 0.204 277.1);   /* #6366F1 */
+  --color-blue:          oklch(62.3% 0.188 259.8);   /* #3B82F6 */
+  --color-accent:        oklch(56.3% 0.241 260.8);   /* #0066FF — primary action */
+  --color-cyan:          oklch(80.4% 0.146 219.5);   /* #00D4FF — glow */
+  --color-focus:         oklch(80.4% 0.146 219.5);   /* cyan focus ring */
+
+  /* Semantic */
+  --color-success:       oklch(69.6% 0.149 162.5);   /* #10B981 */
+  --color-danger:        oklch(63.8% 0.225 25.0);    /* warm coral, sparing */
+
+  /* Brand gradients — DOCUMENTED EXCEPTION (design.md §6).
+     Used on: the mark · the primary CTA · hero headline keywords. Nothing else. */
+  --gradient-primary:    linear-gradient(135deg,
+                           var(--color-purple)  0%,
+                           var(--color-indigo) 50%,
+                           var(--color-blue)  100%);
+  --gradient-accent:     linear-gradient(135deg,
+                           var(--color-accent) 0%,
+                           var(--color-cyan) 100%);
+
+  /* Atmospheric blooms — two cool blooms, fixed-attached, no animation
+     (atmospheric.md: up to two blooms, ~20-30 % footprint each). */
+  --bloom-purple:        radial-gradient(62% 50% at 12% -5%,
+                           oklch(54.1% 0.247 293.0 / 0.32),
+                           transparent 70%);
+  --bloom-cyan:          radial-gradient(55% 45% at 100% 100%,
+                           oklch(80.4% 0.146 219.5 / 0.16),
+                           transparent 65%);
+
+  /* Type — Geist atmospheric pairing per typography.md.
+     Inter / Roboto / Open Sans are banned defaults (typography.md § Bans).
+     Geist is the atmospheric canon AND shipped by the scaffold. */
+  --font-display:        var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-body:           var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-outlier:        var(--font-geist-mono), ui-monospace, monospace;
+
+  /* Type scale — major third (1.25), 16 px body floor */
+  --text-xs:             0.75rem;     /* 12 */
+  --text-sm:             0.875rem;    /* 14 — label minimum */
+  --text-base:           1rem;        /* 16 — body floor */
+  --text-md:             1.125rem;    /* 18 */
+  --text-lg:             1.25rem;     /* 20 */
+  --text-xl:             1.5rem;      /* 24 */
+  --text-2xl:            1.875rem;    /* 30 */
+  --text-3xl:            2.25rem;     /* 36 */
+  --text-4xl:            3rem;        /* 48 */
+  --text-display-s:      clamp(2.25rem, 4vw + 0.5rem, 3.75rem);
+  --text-display:        clamp(2.75rem, 6vw + 0.5rem, 5.25rem);
+
+  /* Spacing — 4-pt scale */
+  --space-1:             0.25rem;
+  --space-2:             0.5rem;
+  --space-3:             0.75rem;
+  --space-4:             1rem;
+  --space-5:             1.5rem;
+  --space-6:             2rem;
+  --space-7:             3rem;
+  --space-8:             4rem;
+  --space-9:             6rem;
+  --space-10:            8rem;
+  --space-3xl:           var(--space-10);
+
+  /* Radius — brand shapes from the brief */
+  --radius-input:        0.625rem;    /* 10 — inputs */
+  --radius-button:       0.75rem;     /* 12 */
+  --radius-card:         1rem;        /* 16 */
+  --radius-pill:         100rem;      /* fully rounded */
+
+  /* Motion — three named easings; ≤ ~3 primitives per page */
+  --ease-out:            cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:             cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out:         cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast:            150ms;
+  --dur-base:            250ms;
+  --dur-slow:            450ms;
+  --dur-bloom:           0ms;         /* blooms do NOT animate */
+}

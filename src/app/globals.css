@@ -1,0 +1,105 @@
+@import "tailwindcss";
+@import "./tokens.css";
+
+/* ──────────────────────────────────────────────────────────────
+ * Map Hallmark tokens into Tailwind v4 utilities (@theme inline).
+ * Components reference tokens by name; no inline hex values.
+ * ────────────────────────────────────────────────────────────── */
+@theme inline {
+  --color-paper:         var(--color-paper);
+  --color-surface:       var(--color-surface);
+  --color-card:          var(--color-card);
+  --color-card-hi:       var(--color-card-hi);
+  --color-rule:          var(--color-rule);
+  --color-ink:           var(--color-ink);
+  --color-ink-secondary: var(--color-ink-secondary);
+  --color-ink-muted:     var(--color-ink-muted);
+  --color-purple:        var(--color-purple);
+  --color-indigo:        var(--color-indigo);
+  --color-blue:          var(--color-blue);
+  --color-accent:        var(--color-accent);
+  --color-cyan:          var(--color-cyan);
+  --color-focus:         var(--color-focus);
+  --color-success:       var(--color-success);
+
+  --font-sans:           var(--font-body);
+  --font-display:        var(--font-display);
+  --font-mono:           var(--font-outlier);
+
+  --radius-input:        var(--radius-input);
+  --radius-button:       var(--radius-button);
+  --radius-card:         var(--radius-card);
+  --radius-pill:         var(--radius-pill);
+}
+
+/* Base canvas — atmospheric dark with two cool radial blooms */
+html {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  color-scheme: dark;
+  overflow-x: clip;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--text-base);
+  line-height: 1.55;
+  min-height: 100vh;
+  overflow-x: clip;
+  background:
+    var(--bloom-purple),
+    var(--bloom-cyan),
+    var(--color-paper);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Subtle film grain over the canvas — depth without animation */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.6'/></svg>");
+  mix-blend-mode: overlay;
+}
+
+main, section, header, footer, nav {
+  position: relative;
+  z-index: 1;
+}
+
+/* Selection — restrained accent */
+::selection {
+  background: oklch(56.3% 0.241 260.8 / 0.35);
+  color: var(--color-ink);
+}
+
+/* Focus discipline — visible, instant, ≥ 3:1 contrast (never animated) */
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Reduced-motion — atmospheric collapses to opacity-only */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  body::before { display: none; }
+}
+
+/* Utility — tabular numerals for data displays */
+.num-tabular { font-variant-numeric: tabular-nums; }

@@ -9,21 +9,21 @@ on `localhost`; Stage B publishes only after local approval.
 
 ### Phase 0 · Scaffold
 
-- [ ] `create-next-app` — TypeScript, App Router, Tailwind, `src/`, ESLint
-- [ ] Install `motion` and `lucide-react`
-- [ ] Add `.env.example` (placeholder variable names only)
-- [ ] Update `.gitignore` — raw `assets/`, `waitlist.local.json`, `.next/`
-- [ ] Dev server runs at `localhost:3000`
+- [x] `create-next-app` — TypeScript, App Router, Tailwind, `src/`, ESLint
+- [x] Install `motion` and `lucide-react`
+- [x] Add `.env.example` (placeholder variable names only)
+- [x] Update `.gitignore` — raw `assets/`, `waitlist.local.json`, `.next/`
+- [x] Production build passes (`npm run build` → static prerender, no warnings)
 
 ### Phase 1 · Design system
 
-- [ ] Run the Hallmark pre-flight scan; record findings
-- [ ] Write `design.md` — the locked Zappli atmospheric system
-- [ ] Write `tokens.css` — all brand colours OKLCH-encoded
-- [ ] Wire Tailwind `@theme` from the tokens
-- [ ] Load Inter + Inter Tight via `next/font`
-- [ ] Base layout, page metadata, gradient "Z" favicon
-- [ ] Create `.hallmark/` project memory (`log.json`, `preflight.json`)
+- [x] Run the Hallmark pre-flight scan; record findings (`.hallmark/preflight.json`)
+- [x] Write `design.md` — the locked Zappli atmospheric system
+- [x] Write `tokens.css` — all brand colours OKLCH-encoded
+- [x] Wire Tailwind `@theme` from the tokens
+- [x] Load Geist + Geist Mono via `next/font` (Hallmark bans Inter — see design.md §3)
+- [x] Base layout, page metadata, gradient "Z" favicon (`src/app/icon.svg`)
+- [x] Create `.hallmark/` project memory (log entry written at the Phase 8 build stamp)
 
 ### Phase 2 · Asset pipeline
 
