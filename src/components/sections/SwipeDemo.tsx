@@ -1,10 +1,10 @@
 import { Section } from "@/components/Section";
 import { Container } from "@/components/Container";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { SwipeDeck } from "@/components/SwipeDeck";
 
 /**
- * S4 Interactive swipe demo — Phase 5 fills in the draggable card stack.
- * This is the Phase-4 placeholder.
+ * S4 — Interactive swipe demo. Section frame + the SwipeDeck client component.
  */
 export function SwipeDemo() {
   return (
@@ -30,54 +30,30 @@ export function SwipeDemo() {
               letterSpacing: "-0.03em",
               color: "var(--color-ink)",
               lineHeight: 1.08,
-              maxWidth: "18ch",
+              maxWidth: "20ch",
             }}
           >
             See it. Swipe it.
           </h2>
           <p
-            className="mb-12 max-w-xl"
+            className="max-w-xl"
             style={{
               color: "var(--color-ink-secondary)",
               fontSize: "var(--text-md)",
               lineHeight: 1.6,
             }}
           >
-            Swipe the card on the right. Watch the tailored resume render in
-            place — same flow as the app, no install required.
+            Drag a card to swipe. In the real app, every swipe-right kicks off
+            a tailored resume, a filled-in application, and warm intros to
+            people at the company.
           </p>
         </ScrollReveal>
 
-        <div
-          className="relative aspect-[16/10] sm:aspect-[16/9] rounded-[var(--radius-card)] overflow-hidden"
-          style={{
-            backgroundColor: "var(--color-card)",
-            border: "1px solid oklch(35% 0.020 258 / 0.4)",
-            boxShadow: "0 30px 80px -28px oklch(0% 0 0 / 0.65)",
-          }}
-        >
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "radial-gradient(80% 60% at 30% 0%, oklch(54.1% 0.247 293.0 / 0.12), transparent 60%)," +
-                "radial-gradient(70% 60% at 70% 100%, oklch(80.4% 0.146 219.5 / 0.10), transparent 60%)",
-            }}
-          />
-          <div className="absolute inset-0 flex items-center justify-center text-center px-8">
-            <div>
-              <p
-                className="font-mono uppercase tracking-[0.2em] text-[length:var(--text-sm)] mb-2"
-                style={{ color: "var(--color-ink-muted)" }}
-              >
-                Interactive swipe deck
-              </p>
-              <p style={{ color: "var(--color-ink-secondary)" }}>
-                Phase 5 wires the draggable card stack.
-              </p>
-            </div>
+        <ScrollReveal delay={0.12}>
+          <div className="mt-12 sm:mt-16">
+            <SwipeDeck />
           </div>
-        </div>
+        </ScrollReveal>
       </Container>
     </Section>
   );

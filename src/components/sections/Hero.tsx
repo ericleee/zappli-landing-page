@@ -1,8 +1,8 @@
 import { Section } from "@/components/Section";
 import { Container } from "@/components/Container";
 import { GradientText } from "@/components/GradientText";
-import { GradientButton } from "@/components/GradientButton";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { WaitlistForm } from "@/components/WaitlistForm";
 
 /**
  * S1 Hero — Workbench macrostructure entry.
@@ -51,38 +51,13 @@ export function Hero() {
               you swipe right.
             </p>
 
-            <form
-              className="flex flex-col sm:flex-row gap-3 max-w-md mb-3"
-              aria-label="Join the waitlist"
-            >
-              <label htmlFor="hero-email" className="sr-only">
-                Email
-              </label>
-              <input
-                id="hero-email"
-                type="email"
-                inputMode="email"
-                autoComplete="email"
-                placeholder="you@example.com"
-                disabled
-                className="flex-1 px-4 py-3 text-[length:var(--text-md)] rounded-[var(--radius-input)] placeholder:text-[color:var(--color-ink-muted)]"
-                style={{
-                  backgroundColor: "oklch(22.0% 0.016 256.8 / 0.55)",
-                  border: "1px solid oklch(35% 0.020 258 / 0.5)",
-                  color: "var(--color-ink)",
-                }}
-              />
-              <GradientButton size="lg" disabled type="submit">
-                Join the waitlist
-              </GradientButton>
-            </form>
+            <WaitlistForm />
 
             <p
-              className="text-[length:var(--text-sm)]"
+              className="mt-3 text-[length:var(--text-sm)]"
               style={{ color: "var(--color-ink-muted)" }}
             >
-              Be first in line when Zappli launches. No spam. (Form arrives in
-              Phase 6.)
+              Be first in line when Zappli launches. No spam.
             </p>
           </ScrollReveal>
 

@@ -1,7 +1,7 @@
 import { Section } from "@/components/Section";
 import { Container } from "@/components/Container";
-import { GradientButton } from "@/components/GradientButton";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { WaitlistForm } from "@/components/WaitlistForm";
 
 /**
  * S9 Final CTA — closing statement + the waitlist form again.
@@ -66,37 +66,13 @@ export function FinalCTA() {
                 and you&apos;ll be at the front of the line.
               </p>
 
-              <form
-                className="flex flex-col sm:flex-row gap-3 max-w-md"
-                aria-label="Join the waitlist"
-              >
-                <label htmlFor="footer-email" className="sr-only">
-                  Email
-                </label>
-                <input
-                  id="footer-email"
-                  type="email"
-                  inputMode="email"
-                  autoComplete="email"
-                  placeholder="you@example.com"
-                  disabled
-                  className="flex-1 px-4 py-3 text-[length:var(--text-md)] rounded-[var(--radius-input)] placeholder:text-[color:var(--color-ink-muted)]"
-                  style={{
-                    backgroundColor: "oklch(13% 0.014 258 / 0.6)",
-                    border: "1px solid oklch(35% 0.020 258 / 0.55)",
-                    color: "var(--color-ink)",
-                  }}
-                />
-                <GradientButton size="lg" disabled type="submit">
-                  Join the waitlist
-                </GradientButton>
-              </form>
+              <WaitlistForm variant="dark" />
 
               <p
                 className="mt-3 text-[length:var(--text-sm)]"
                 style={{ color: "var(--color-ink-muted)" }}
               >
-                No spam. Form arrives in Phase 6.
+                No spam. Unsubscribe any time.
               </p>
             </div>
           </div>

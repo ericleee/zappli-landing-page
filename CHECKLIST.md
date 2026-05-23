@@ -61,19 +61,19 @@ on `localhost`; Stage B publishes only after local approval.
 
 ### Phase 5 · Interactive swipe deck
 
-- [ ] S4 draggable job-card stack (motion drag)
-- [ ] Swipe-right → tailored-resume animation
-- [ ] Keyboard accessible
-- [ ] Reduced-motion fallback (tap / static)
+- [x] S4 draggable job-card stack (motion drag, rotation, fly-off)
+- [~] Swipe-right → tailored-resume animation (swipe is in; the "tailoring" reveal is deferred to Phase 7 polish)
+- [x] Keyboard accessible (arrow keys + tappable Skip / Apply buttons)
+- [x] Reduced-motion fallback (instant index advance, no fly-off animation)
 
 ### Phase 6 · Waitlist form (local mock)
 
-- [ ] `<WaitlistForm>` — all 8 states
-- [ ] `/api/waitlist` route handler — local mock storage
-- [ ] Email-format validation
-- [ ] Duplicate-email handling
-- [ ] Honeypot spam field
-- [ ] Success / error states verified
+- [x] `<WaitlistForm>` — all 8 states (default · hover · focus · active · disabled · loading · error · success)
+- [x] `/api/waitlist` route handler — local mock storage in waitlist.local.json
+- [x] Email-format validation (client + server)
+- [x] Duplicate-email handling (409, friendly message)
+- [x] Honeypot spam field (silent accept, no row written)
+- [x] Success / error states verified end-to-end via curl
 
 ### Phase 7 · Motion + polish + responsive
 
