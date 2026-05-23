@@ -3,6 +3,7 @@ import { Container } from "@/components/Container";
 import { GradientText } from "@/components/GradientText";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { WaitlistForm } from "@/components/WaitlistForm";
+import { HeroVideo } from "@/components/HeroVideo";
 
 /**
  * S1 Hero — Workbench macrostructure entry.
@@ -61,10 +62,10 @@ export function Hero() {
             </p>
           </ScrollReveal>
 
-          {/* Right: app video centerpiece */}
+          {/* Right: real looping app video (source aspect 480 / 878) */}
           <ScrollReveal delay={0.12}>
             <figure
-              className="relative aspect-[9/16] max-w-[340px] mx-auto rounded-[1.5rem] overflow-hidden"
+              className="relative aspect-[480/878] max-w-[340px] mx-auto rounded-[1.5rem] overflow-hidden"
               style={{
                 backgroundColor: "var(--color-card)",
                 border: "1px solid oklch(35% 0.020 258 / 0.45)",
@@ -72,27 +73,7 @@ export function Hero() {
                   "0 40px 80px -28px oklch(0% 0 0 / 0.75), 0 0 60px -10px oklch(56.3% 0.241 260.8 / 0.18)",
               }}
             >
-              {/* Subtle inner gradient hint so the empty surface still reads
-                  as the brand and not as a bug. */}
-              <div
-                className="absolute inset-0"
-                style={{
-                  background:
-                    "radial-gradient(120% 80% at 50% 0%, oklch(54.1% 0.247 293.0 / 0.18), transparent 60%)",
-                }}
-              />
-              <figcaption
-                className="absolute inset-0 flex items-center justify-center text-center px-8"
-                style={{ color: "var(--color-ink-muted)" }}
-              >
-                <p className="text-[length:var(--text-sm)] font-mono uppercase tracking-[0.18em]">
-                  Hero video
-                  <br />
-                  <span className="opacity-70 normal-case tracking-normal font-sans">
-                    Phase 2 swaps in the real looping app recording
-                  </span>
-                </p>
-              </figcaption>
+              <HeroVideo />
             </figure>
           </ScrollReveal>
         </div>

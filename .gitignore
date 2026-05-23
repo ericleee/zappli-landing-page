@@ -63,3 +63,6 @@ assets/
 
 # Local waitlist mock data (Stage A, pre-publish)
 waitlist.local.json
+
+# Local tools (portable ffmpeg, etc.) — large binaries, never committed
+.tools/
