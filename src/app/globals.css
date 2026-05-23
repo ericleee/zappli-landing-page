@@ -32,7 +32,13 @@
   --radius-pill:         var(--radius-pill);
 }
 
-/* Base canvas — atmospheric dark with two cool radial blooms */
+/* Base canvas — atmospheric dark.
+ *
+ * Performance discipline: NO background-attachment: fixed (scroll-jank);
+ * NO mix-blend-mode grain overlay (composite cost). The two cool blooms
+ * sit on the body's natural background, sized to one viewport, and scroll
+ * away with the content — present in the hero, absent below, no repaint cost.
+ */
 html {
   background-color: var(--color-paper);
   color: var(--color-ink);
@@ -47,31 +53,13 @@ body {
   line-height: 1.55;
   min-height: 100vh;
   overflow-x: clip;
-  background:
-    var(--bloom-purple),
-    var(--bloom-cyan),
-    var(--color-paper);
-  background-attachment: fixed;
+  background-color: var(--color-paper);
+  background-image: var(--bloom-purple), var(--bloom-cyan);
   background-repeat: no-repeat;
+  background-size: 100% 100vh, 100% 100vh;
+  background-position: 0 0, 0 0;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-}
-
-/* Subtle film grain over the canvas — depth without animation */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.035;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.6'/></svg>");
-  mix-blend-mode: overlay;
-}
-
-main, section, header, footer, nav {
-  position: relative;
-  z-index: 1;
 }
 
 /* Selection — restrained accent */
@@ -98,7 +86,6 @@ main, section, header, footer, nav {
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
-  body::before { display: none; }
 }
 
 /* Utility — tabular numerals for data displays */

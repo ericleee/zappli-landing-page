@@ -3,13 +3,15 @@
 import { useEffect, useRef } from "react";
 
 /**
- * The hero's looping app video. Renders the poster on SSR, then on mount
- * starts the loop *only* if the user has not requested reduced motion.
- * The poster image remains visible while the video downloads.
+ * The hero's looping app video.
  *
+ * - Renders the poster on SSR; on mount, plays *only* if the user has not
+ *   requested reduced motion.
+ * - IntersectionObserver pauses the video when it scrolls out of view so we
+ *   don't burn CPU decoding off-screen frames.
  * - `muted` + `playsInline` are required for autoplay on iOS / mobile.
- * - WebM first (preferred by Chrome / Firefox / Edge), MP4 fallback (Safari).
- * - `preload="metadata"` loads only the first frame + headers; the rest
+ * - WebM first (Chrome / Firefox / Edge), MP4 fallback (Safari).
+ * - `preload="metadata"` loads only the first frame + headers; the body
  *   streams when play() is called.
  */
 export function HeroVideo() {
@@ -22,9 +24,38 @@ export function HeroVideo() {
       "(prefers-reduced-motion: reduce)"
     ).matches;
     if (reduce) return; // leave the poster up, do not play
-    v.play().catch(() => {
-      /* autoplay can be blocked; the poster stays — acceptable */
-    });
+
+    let inView = false;
+
+    const tryPlay = () => {
+      v.play().catch(() => {
+        /* autoplay can be blocked; the poster stays — acceptable */
+      });
+    };
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          inView = e.isIntersecting;
+          if (inView) tryPlay();
+          else v.pause();
+        }
+      },
+      { threshold: 0.1 }
+    );
+    io.observe(v);
+
+    // Kick it off in case the video is already on-screen at mount.
+    const rect = v.getBoundingClientRect();
+    if (
+      rect.top < window.innerHeight &&
+      rect.bottom > 0 &&
+      !inView // observer's first callback is async — start optimistically
+    ) {
+      tryPlay();
+    }
+
+    return () => io.disconnect();
   }, []);
 
   return (

@@ -75,7 +75,6 @@ export function SwipeDeck() {
   }, []);
 
   const done = index >= JOBS.length;
-  const remaining = JOBS.length - index;
 
   const onSwipe = (_direction: "left" | "right") => {
     setIndex((i) => i + 1);
@@ -167,13 +166,6 @@ export function SwipeDeck() {
           }}
           aria-label="Skip this job"
         />
-        <p
-          className="text-[length:var(--text-sm)] font-mono tabular-nums px-3 min-w-[80px] text-center"
-          style={{ color: "var(--color-ink-muted)" }}
-          aria-live="polite"
-        >
-          {done ? "0 / " + JOBS.length : `${remaining} / ${JOBS.length}`}
-        </p>
         <ActionButton
           label="Apply"
           icon={<Check size={20} strokeWidth={2} />}
@@ -190,32 +182,6 @@ export function SwipeDeck() {
         />
       </div>
 
-      <p
-        className="mt-5 text-center text-[length:var(--text-sm)]"
-        style={{ color: "var(--color-ink-muted)" }}
-      >
-        Drag the card, tap a button, or hit{" "}
-        <kbd
-          className="px-1.5 py-0.5 rounded text-[length:var(--text-xs)] font-mono"
-          style={{
-            backgroundColor: "oklch(22% 0.016 256.8 / 0.6)",
-            border: "1px solid oklch(35% 0.020 258 / 0.5)",
-          }}
-        >
-          ←
-        </kbd>{" "}
-        /{" "}
-        <kbd
-          className="px-1.5 py-0.5 rounded text-[length:var(--text-xs)] font-mono"
-          style={{
-            backgroundColor: "oklch(22% 0.016 256.8 / 0.6)",
-            border: "1px solid oklch(35% 0.020 258 / 0.5)",
-          }}
-        >
-          →
-        </kbd>
-        .
-      </p>
     </div>
   );
 }

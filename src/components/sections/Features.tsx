@@ -30,26 +30,11 @@ const features = [
   },
 ] as const;
 
-/**
- * S5 Features — bento grid (irregular tile sizes per Hallmark, never uniform
- * 4-card rows which are the AI features-card-row tell).
- */
 export function Features() {
   return (
-    <Section
-      id="features"
-      label="Features"
-      className="border-t"
-      style={{ borderColor: "oklch(35% 0.020 258 / 0.22)" }}
-    >
+    <Section id="features" label="Features">
       <Container>
         <ScrollReveal>
-          <p
-            className="text-[length:var(--text-sm)] uppercase tracking-[0.22em] font-mono mb-6"
-            style={{ color: "var(--color-ink-muted)" }}
-          >
-            05 · features
-          </p>
           <h2
             className="font-semibold mb-10 sm:mb-12"
             style={{
@@ -81,19 +66,11 @@ export function Features() {
                     border: "1px solid oklch(35% 0.020 258 / 0.35)",
                   }}
                 >
-                  <span
-                    className="inline-flex items-center justify-center w-10 h-10 rounded-[var(--radius-button)]"
-                    style={{
-                      backgroundColor: "oklch(56.3% 0.241 260.8 / 0.14)",
-                      border: "1px solid oklch(80.4% 0.146 219.5 / 0.28)",
-                    }}
-                  >
-                    <Icon
-                      size={20}
-                      strokeWidth={1.6}
-                      style={{ color: "var(--color-cyan)" }}
-                    />
-                  </span>
+                  <Icon
+                    size={22}
+                    strokeWidth={1.6}
+                    style={{ color: "var(--color-cyan)" }}
+                  />
                   <div>
                     <h3
                       className="font-semibold mb-2"

@@ -77,12 +77,13 @@ on `localhost`; Stage B publishes only after local approval.
 
 ### Phase 7 · Motion + polish + responsive
 
-- [ ] Scroll-reveal on every section
-- [ ] Cursor-spotlight glow
-- [ ] Count-up animation on the metric tiles
-- [ ] Responsive at 320 / 375 / 414 / 768px — no horizontal scroll
-- [ ] Performance — video posters, lazy loading, `next/image`
-- [ ] Accessibility — focus rings, `prefers-reduced-motion`, aria on form + accordion
+- [x] Scroll-reveal on every section
+- [x] ~~Cursor-spotlight glow~~ — **removed** for performance (was the main lag source)
+- [x] Page simplified: dropped all numbered section eyebrows (Hallmark gate slop), dropped the Trust section, dropped `border-t` dividers, dropped empty figure placeholders in How It Works (now a clean 3-column grid), dropped counter + kbd hint under the swipe deck
+- [x] Performance — body grain removed, `background-attachment: fixed` removed, HeroVideo pauses via IntersectionObserver when off-screen
+- [ ] Count-up animation on the metric tiles (deferred — static tiles read cleaner for now)
+- [ ] Responsive sweep at 320 / 375 / 414 / 768 px (browser pass still needed)
+- [x] Accessibility — focus rings, `prefers-reduced-motion`, aria on form + accordion
 
 ### Phase 8 · Hallmark slop test
 

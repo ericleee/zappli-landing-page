@@ -6,7 +6,7 @@ import { Plus } from "lucide-react";
 const faqs = [
   {
     q: "Is Zappli free?",
-    a: "Free to join the waitlist. The app will ship with a free tier plus a Pro subscription at launch.",
+    a: "Free to join the waitlist. The app ships with a free tier plus a Pro subscription at launch.",
   },
   {
     q: "When does it launch?",
@@ -26,27 +26,11 @@ const faqs = [
   },
 ];
 
-/**
- * S8 FAQ — Conversational-FAQ archetype. Uses native <details>/<summary> so
- * the accordion works with no JavaScript. The +→× rotation is pure CSS via
- * the :open pseudo-class.
- */
 export function FAQ() {
   return (
-    <Section
-      id="faq"
-      label="FAQ"
-      className="border-t"
-      style={{ borderColor: "oklch(35% 0.020 258 / 0.22)" }}
-    >
+    <Section id="faq" label="FAQ">
       <Container>
         <ScrollReveal>
-          <p
-            className="text-[length:var(--text-sm)] uppercase tracking-[0.22em] font-mono mb-6"
-            style={{ color: "var(--color-ink-muted)" }}
-          >
-            08 · questions
-          </p>
           <h2
             className="font-semibold mb-10 sm:mb-12"
             style={{

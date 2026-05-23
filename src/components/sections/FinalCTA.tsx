@@ -3,18 +3,9 @@ import { Container } from "@/components/Container";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { WaitlistForm } from "@/components/WaitlistForm";
 
-/**
- * S9 Final CTA — closing statement + the waitlist form again.
- * Form is wired in Phase 6 (currently a disabled placeholder).
- */
 export function FinalCTA() {
   return (
-    <Section
-      id="waitlist"
-      label="Join the waitlist"
-      className="border-t"
-      style={{ borderColor: "oklch(35% 0.020 258 / 0.22)" }}
-    >
+    <Section id="waitlist" label="Join the waitlist">
       <Container>
         <ScrollReveal>
           <div
@@ -24,7 +15,6 @@ export function FinalCTA() {
               border: "1px solid oklch(35% 0.020 258 / 0.45)",
             }}
           >
-            {/* contained accent bloom inside the card */}
             <div
               className="absolute inset-0 pointer-events-none"
               style={{
@@ -35,12 +25,6 @@ export function FinalCTA() {
               aria-hidden="true"
             />
             <div className="relative">
-              <p
-                className="text-[length:var(--text-sm)] uppercase tracking-[0.22em] font-mono mb-5"
-                style={{ color: "var(--color-ink-muted)" }}
-              >
-                09 · join the waitlist
-              </p>
               <h2
                 className="font-semibold mb-5"
                 style={{
@@ -62,7 +46,7 @@ export function FinalCTA() {
                   lineHeight: 1.55,
                 }}
               >
-                Drop your email. We&apos;ll let you know the day Zappli ships,
+                Drop your email. We&apos;ll let you know the day Zappli ships
                 and you&apos;ll be at the front of the line.
               </p>
 
