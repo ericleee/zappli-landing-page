@@ -13,6 +13,7 @@ export function Problem() {
       <Container>
         <ScrollReveal>
           <div className="max-w-3xl">
+            <h2 className="sr-only">The problem</h2>
             <p
               style={{
                 fontFamily: "var(--font-display)",

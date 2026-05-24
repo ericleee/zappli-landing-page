@@ -48,7 +48,7 @@ export function Hero() {
               }}
             >
               AI tailors your resume, fills the application, and drafts warm
-              intros to people at the company. Every job, in under a minute.
+              intros to people at the company. Every job. In under a minute.
             </p>
             <div className="mx-auto max-w-lg">
               <WaitlistForm />

@@ -46,8 +46,8 @@ export function FinalCTA() {
                   lineHeight: 1.55,
                 }}
               >
-                Drop your email. We&apos;ll let you know the day Zappli ships
-                and you&apos;ll be at the front of the line.
+                Drop your email. You&apos;ll get the early invite, founder
+                updates, and the launch link before anyone else.
               </p>
 
               <div className="max-w-md">

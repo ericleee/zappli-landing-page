@@ -29,9 +29,8 @@ export function SwipeDemo() {
               lineHeight: 1.55,
             }}
           >
-            Drag a card. In the real app, every swipe-right kicks off a
-            tailored resume, a filled application, and warm intros at the
-            company.
+            Drag a card. In the real app, the rest happens automatically — in
+            seconds.
           </p>
         </ScrollReveal>
 
