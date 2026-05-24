@@ -69,7 +69,7 @@ export function Hero() {
               backgroundColor: "var(--color-card)",
               border: "1px solid oklch(35% 0.020 258 / 0.45)",
               boxShadow:
-                "0 40px 80px -28px oklch(0% 0 0 / 0.75), 0 0 60px -10px oklch(56.3% 0.241 260.8 / 0.18)",
+                "0 50px 100px -28px oklch(0% 0 0 / 0.85), 0 0 80px -8px oklch(56.3% 0.241 260.8 / 0.25), 0 0 0 1px oklch(80.4% 0.146 219.5 / 0.10)",
             }}
           >
             <HeroVideo />

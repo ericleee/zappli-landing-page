@@ -84,7 +84,7 @@ export function SwipeDeck() {
     <div className="relative max-w-[520px] mx-auto">
       <div
         className="relative mx-auto"
-        style={{ height: 480, maxWidth: 340 }}
+        style={{ height: 520, maxWidth: 380 }}
       >
         <AnimatePresence mode="popLayout" initial={false}>
           {!done ? (
