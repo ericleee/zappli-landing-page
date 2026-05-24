@@ -18,12 +18,15 @@ const steps = [
 ];
 
 /**
- * S3 How It Works — stacked numbered moments, type-led.
+ * S3 How It Works — type-led, poster-size numbers.
  *
- * Single column, vertical rhythm, generous spacing. The number is the visual
- * anchor (display-sized, cyan); the label sits directly below, body underneath.
- * Not a card grid. Not a 3-column feature row. The content is *genuinely
- * ordinal* per Hallmark, so numbered eyebrows are allowed here.
+ * Single column, stacked vertical rhythm. Each step starts with a giant
+ * `01 / 02 / 03` in the brand cyan, then the label, then the body. A faint
+ * vertical gradient line on the left ties the three steps together so the
+ * section reads as a sequence, not three disconnected blocks.
+ *
+ * Will get *much* richer once per-step app visuals land (see ASSETS_NEEDED.md
+ * locally — three step videos or screenshots would transform this section).
  */
 export function HowItWorks() {
   return (
@@ -46,18 +49,29 @@ export function HowItWorks() {
             </h2>
           </ScrollReveal>
 
-          <ol className="space-y-14 sm:space-y-16 list-none p-0">
+          <ol className="list-none p-0 m-0 relative space-y-16 sm:space-y-20">
+            {/* faint vertical connector — only visible at sm+ so we don't
+                fight mobile rhythm */}
+            <div
+              aria-hidden="true"
+              className="hidden sm:block absolute top-2 bottom-6 left-[3px] w-px"
+              style={{
+                background:
+                  "linear-gradient(180deg, oklch(80.4% 0.146 219.5 / 0.55), oklch(80.4% 0.146 219.5 / 0) 95%)",
+              }}
+            />
+
             {steps.map((step, i) => (
               <ScrollReveal key={step.label} delay={i * 0.06}>
-                <li>
+                <li className="sm:pl-10 relative">
                   <p
-                    className="num-tabular font-semibold mb-3"
+                    className="num-tabular font-semibold mb-4"
                     style={{
                       fontFamily: "var(--font-display)",
-                      fontSize: "var(--text-2xl)",
+                      fontSize: "clamp(3rem, 5vw + 1rem, 4.75rem)",
                       color: "var(--color-cyan)",
-                      letterSpacing: "-0.02em",
-                      lineHeight: 1,
+                      letterSpacing: "-0.04em",
+                      lineHeight: 0.95,
                     }}
                   >
                     0{i + 1}
@@ -66,10 +80,10 @@ export function HowItWorks() {
                     className="font-semibold mb-3"
                     style={{
                       fontFamily: "var(--font-display)",
-                      fontSize: "var(--text-xl)",
-                      letterSpacing: "-0.022em",
+                      fontSize: "clamp(1.5rem, 2vw + 0.5rem, 2rem)",
+                      letterSpacing: "-0.025em",
                       color: "var(--color-ink)",
-                      lineHeight: 1.2,
+                      lineHeight: 1.15,
                     }}
                   >
                     {step.label}

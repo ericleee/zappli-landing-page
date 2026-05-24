@@ -49,14 +49,16 @@
                            var(--color-accent) 0%,
                            var(--color-cyan) 100%);
 
-  /* Atmospheric blooms — two cool blooms, fixed-attached, no animation
-     (atmospheric.md: up to two blooms, ~20-30 % footprint each). */
+  /* Atmospheric blooms — two cool blooms, no animation.
+     Centers are positioned so that the bloom is fully transparent before
+     the 100vh background box ends, leaving no visible cutoff edge.
+     (atmospheric.md: up to two blooms, ~20-30 % footprint each.) */
   --bloom-purple:        radial-gradient(62% 50% at 12% -5%,
-                           oklch(54.1% 0.247 293.0 / 0.32),
-                           transparent 70%);
-  --bloom-cyan:          radial-gradient(55% 45% at 100% 100%,
-                           oklch(80.4% 0.146 219.5 / 0.16),
-                           transparent 65%);
+                           oklch(54.1% 0.247 293.0 / 0.28),
+                           transparent 75%);
+  --bloom-cyan:          radial-gradient(58% 50% at 100% 55%,
+                           oklch(80.4% 0.146 219.5 / 0.12),
+                           transparent 72%);
 
   /* Type — Geist atmospheric pairing per typography.md.
      Inter / Roboto / Open Sans are banned defaults (typography.md § Bans).

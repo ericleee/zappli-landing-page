@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <>
       <Nav />
-      <main id="top" className="flex-1 pt-28 sm:pt-32">
+      <main id="top" className="flex-1 pt-32 sm:pt-40 lg:pt-44">
         <Hero />
         <Problem />
         <HowItWorks />
