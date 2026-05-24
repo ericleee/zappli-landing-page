@@ -25,6 +25,32 @@ export function Hero() {
       <Container>
         <ScrollReveal>
           <div className="text-center max-w-3xl mx-auto">
+            <div
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-[var(--radius-pill)] mb-8"
+              style={{
+                backgroundColor: "oklch(56.3% 0.241 260.8 / 0.08)",
+                border: "1px solid oklch(80.4% 0.146 219.5 / 0.28)",
+              }}
+            >
+              <span
+                aria-hidden="true"
+                className="w-1.5 h-1.5 rounded-full"
+                style={{
+                  backgroundColor: "var(--color-cyan)",
+                  boxShadow: "0 0 10px oklch(80.4% 0.146 219.5 / 0.7)",
+                }}
+              />
+              <span
+                className="font-mono uppercase"
+                style={{
+                  fontSize: "var(--text-xs)",
+                  letterSpacing: "0.18em",
+                  color: "var(--color-cyan)",
+                }}
+              >
+                Pre-launch · Summer 2026
+              </span>
+            </div>
             <h1
               className="font-semibold mb-6 mx-auto"
               style={{

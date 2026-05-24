@@ -3,9 +3,8 @@ import { Container } from "@/components/Container";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 /**
- * S2 The Problem — contrast statement.
- * Two lines: the cost of applying, then Zappli's resolution. Numbers do the
- * work; no paragraph of explanation needed.
+ * S2 The Problem — manifesto opener + contrast statement.
+ * Emotional hook first, then the numbers prove the value.
  */
 export function Problem() {
   return (
@@ -14,6 +13,19 @@ export function Problem() {
         <ScrollReveal>
           <div className="max-w-3xl">
             <h2 className="sr-only">The problem</h2>
+            <p
+              className="mb-10 sm:mb-14"
+              style={{
+                fontFamily: "var(--font-display)",
+                fontSize: "clamp(1.875rem, 3.5vw + 0.5rem, 2.75rem)",
+                lineHeight: 1.2,
+                letterSpacing: "-0.025em",
+                color: "var(--color-ink-muted)",
+                maxWidth: "30ch",
+              }}
+            >
+              Job hunting was never supposed to be a second job.
+            </p>
             <p
               style={{
                 fontFamily: "var(--font-display)",

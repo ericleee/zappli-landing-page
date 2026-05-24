@@ -45,7 +45,7 @@ export function HowItWorks() {
                 maxWidth: "22ch",
               }}
             >
-              Three steps. Most of them, Zappli does.
+              You swipe. We do the rest.
             </h2>
           </ScrollReveal>
 

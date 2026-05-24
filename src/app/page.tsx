@@ -1,10 +1,10 @@
 /* The Zappli landing page.
  * Macrostructure: Workbench (#05).  Genre: atmospheric.
  *
- * 6 sections, marketing-focused funnel:
- *   Hero (centered, form-prominent) -> Problem (contrast statement) ->
- *   How It Works (stacked numbered moments) -> Try a swipe (interactive)
- *   -> FAQ -> Final CTA.
+ * 7 sections, marketing-focused funnel:
+ *   Hero (centered, form-prominent) -> Problem (manifesto + contrast) ->
+ *   How It Works (stacked numbered moments) -> Try a swipe (interactive) ->
+ *   Why Zappli (differentiator manifesto) -> FAQ -> Final CTA.
  *
  * See design.md for the locked system. */
 
@@ -14,6 +14,7 @@ import { Hero } from "@/components/sections/Hero";
 import { Problem } from "@/components/sections/Problem";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { SwipeDemo } from "@/components/sections/SwipeDemo";
+import { WhyZappli } from "@/components/sections/WhyZappli";
 import { FAQ } from "@/components/sections/FAQ";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 
@@ -26,6 +27,7 @@ export default function Home() {
         <Problem />
         <HowItWorks />
         <SwipeDemo />
+        <WhyZappli />
         <FAQ />
         <FinalCTA />
       </main>

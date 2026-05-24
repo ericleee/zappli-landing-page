@@ -43,6 +43,7 @@ export function Footer() {
             >
               Privacy
             </a>
+            <span>Built by Eric Lee</span>
             <span>© {year} Zappli</span>
           </div>
         </div>

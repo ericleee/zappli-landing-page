@@ -46,8 +46,8 @@ export function FinalCTA() {
                   lineHeight: 1.55,
                 }}
               >
-                Drop your email. You&apos;ll get the early invite, founder
-                updates, and the launch link before anyone else.
+                Drop your email. Early invite. Founder updates. The launch link
+                before anyone else.
               </p>
 
               <div className="max-w-md">
