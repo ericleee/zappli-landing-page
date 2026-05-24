@@ -32,10 +32,10 @@ export function Footer() {
             style={{ color: "var(--color-ink-muted)" }}
           >
             <a
-              href="mailto:hello@zappli.app"
+              href="mailto:zappli.app@gmail.com"
               className="transition-colors duration-150 hover:text-[color:var(--color-ink-secondary)]"
             >
-              hello@zappli.app
+              zappli.app@gmail.com
             </a>
             <a
               href="/privacy"

@@ -1,75 +1,73 @@
 import { Section } from "@/components/Section";
 import { Container } from "@/components/Container";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import { Hand, Zap, Users } from "lucide-react";
 
 const steps = [
   {
-    icon: Hand,
     label: "Swipe",
-    body: "Swipe through real jobs matched to your resume.",
+    body: "Swipe through real jobs matched to your resume. The ones you like, you keep moving on.",
   },
   {
-    icon: Zap,
     label: "Zappli does the work",
-    body: "AI tailors your resume and fills the application. You review and submit.",
+    body: "AI tailors your resume to the role and fills the application. You give it a final look and tap submit.",
   },
   {
-    icon: Users,
     label: "Get warm intros",
-    body: "Three people at the company. A personal message to each. Drafts ready to send.",
+    body: "Zappli finds people at the company and drafts a personal message to each. You send the ones you like.",
   },
 ];
 
 /**
- * Three steps in a single row. No figure placeholders, no alternating
- * left/right layout — just the three steps stated plainly.
+ * S3 How It Works — stacked numbered moments, type-led.
+ *
+ * Single column, vertical rhythm, generous spacing. The number is the visual
+ * anchor (display-sized, cyan); the label sits directly below, body underneath.
+ * Not a card grid. Not a 3-column feature row. The content is *genuinely
+ * ordinal* per Hallmark, so numbered eyebrows are allowed here.
  */
 export function HowItWorks() {
   return (
     <Section id="how-it-works" label="How it works">
       <Container>
-        <ScrollReveal>
-          <h2
-            className="font-semibold mb-12 sm:mb-16"
-            style={{
-              fontFamily: "var(--font-display)",
-              fontSize: "clamp(2.25rem, 4vw + 0.5rem, 3.5rem)",
-              letterSpacing: "-0.03em",
-              color: "var(--color-ink)",
-              lineHeight: 1.08,
-              maxWidth: "22ch",
-            }}
-          >
-            Three steps. Most of them, Zappli does.
-          </h2>
-        </ScrollReveal>
+        <div className="max-w-2xl mx-auto">
+          <ScrollReveal>
+            <h2
+              className="font-semibold mb-14 sm:mb-20"
+              style={{
+                fontFamily: "var(--font-display)",
+                fontSize: "clamp(2.25rem, 4vw + 0.5rem, 3.5rem)",
+                letterSpacing: "-0.03em",
+                color: "var(--color-ink)",
+                lineHeight: 1.06,
+                maxWidth: "22ch",
+              }}
+            >
+              Three steps. Most of them, Zappli does.
+            </h2>
+          </ScrollReveal>
 
-        <div className="grid gap-10 sm:gap-8 sm:grid-cols-3">
-          {steps.map((step, i) => {
-            const Icon = step.icon;
-            return (
-              <ScrollReveal key={step.label} delay={i * 0.05}>
-                <div>
-                  <span
-                    className="inline-flex items-center justify-center w-11 h-11 rounded-[var(--radius-button)] mb-5"
+          <ol className="space-y-14 sm:space-y-16 list-none p-0">
+            {steps.map((step, i) => (
+              <ScrollReveal key={step.label} delay={i * 0.06}>
+                <li>
+                  <p
+                    className="num-tabular font-semibold mb-3"
                     style={{
-                      backgroundColor: "oklch(56.3% 0.241 260.8 / 0.14)",
-                      border: "1px solid oklch(80.4% 0.146 219.5 / 0.30)",
+                      fontFamily: "var(--font-display)",
+                      fontSize: "var(--text-2xl)",
+                      color: "var(--color-cyan)",
+                      letterSpacing: "-0.02em",
+                      lineHeight: 1,
                     }}
                   >
-                    <Icon
-                      size={20}
-                      strokeWidth={1.7}
-                      style={{ color: "var(--color-cyan)" }}
-                    />
-                  </span>
+                    0{i + 1}
+                  </p>
                   <h3
                     className="font-semibold mb-3"
                     style={{
                       fontFamily: "var(--font-display)",
                       fontSize: "var(--text-xl)",
-                      letterSpacing: "-0.02em",
+                      letterSpacing: "-0.022em",
                       color: "var(--color-ink)",
                       lineHeight: 1.2,
                     }}
@@ -77,18 +75,19 @@ export function HowItWorks() {
                     {step.label}
                   </h3>
                   <p
+                    className="max-w-xl"
                     style={{
                       color: "var(--color-ink-secondary)",
-                      fontSize: "var(--text-base)",
+                      fontSize: "var(--text-md)",
                       lineHeight: 1.55,
                     }}
                   >
                     {step.body}
                   </p>
-                </div>
+                </li>
               </ScrollReveal>
-            );
-          })}
+            ))}
+          </ol>
         </div>
       </Container>
     </Section>

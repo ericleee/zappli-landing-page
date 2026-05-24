@@ -50,7 +50,9 @@ export function FinalCTA() {
                 and you&apos;ll be at the front of the line.
               </p>
 
-              <WaitlistForm variant="dark" />
+              <div className="max-w-md">
+                <WaitlistForm variant="dark" />
+              </div>
 
               <p
                 className="mt-3 text-[length:var(--text-sm)]"

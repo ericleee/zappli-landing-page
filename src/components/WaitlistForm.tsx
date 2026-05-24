@@ -20,6 +20,9 @@ interface Props {
  * Implements all 8 interactive states per design.md:
  *   default · hover · :focus-visible · :active · disabled · loading · error · success
  *
+ * The component is *unconstrained* in width — parents wrap with their own
+ * max-width (the hero uses max-w-lg, the FinalCTA uses max-w-md).
+ *
  * Backend: POSTs to /api/waitlist. In Stage A this is a local mock writing
  * to waitlist.local.json (gitignored). In Stage B the same route swaps to
  * Supabase + Resend without any change to this component.
@@ -93,7 +96,7 @@ export function WaitlistForm({ variant = "default" }: Props) {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
             role="status"
-            className="flex items-center gap-3 rounded-[var(--radius-input)] px-4 py-3.5 max-w-md"
+            className="flex items-center gap-3 rounded-[var(--radius-input)] px-4 py-3.5"
             style={{
               backgroundColor: "oklch(69.6% 0.149 162.5 / 0.12)",
               border: "1px solid oklch(69.6% 0.149 162.5 / 0.45)",
@@ -112,7 +115,7 @@ export function WaitlistForm({ variant = "default" }: Props) {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3 }}
             role="status"
-            className="flex items-center gap-3 rounded-[var(--radius-input)] px-4 py-3.5 max-w-md"
+            className="flex items-center gap-3 rounded-[var(--radius-input)] px-4 py-3.5"
             style={{
               backgroundColor: "oklch(80.4% 0.146 219.5 / 0.10)",
               border: "1px solid oklch(80.4% 0.146 219.5 / 0.35)",
@@ -154,7 +157,7 @@ export function WaitlistForm({ variant = "default" }: Props) {
               />
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-3 max-w-md">
+            <div className="flex flex-col sm:flex-row gap-3">
               <label htmlFor={inputId} className="sr-only">
                 Email
               </label>
